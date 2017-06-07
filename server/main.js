@@ -17,6 +17,7 @@ function onRoute(req, res, next){
 
     //If link => redirect user to long url
     if(link){
+        Links.update(link, {$inc: {clicks: 1}})
         res.writeHead(307, {'Location': link.url})
         res.end()
     } else {
