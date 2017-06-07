@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import Header from './components/header'
 import LinkCreate from './components/link_create'
 import { Links } from '../imports/collections/Links'
-import { LinkList } from './components/link_list'
+import LinkList  from './components/link_list'
 
 
 const App = () => {

@@ -8,7 +8,7 @@ Meteor.methods({
         console.log('links insert: ', url )
         check(url, Match.Where(url => validUrl.isUri(url)))
 
-        const token = Math.random().toString(42).slice(-5)
+        const token = Math.random().toString(36).slice(-5)
         Links.insert({ url, token, clicks: 0})
     }
 })
