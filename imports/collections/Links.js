@@ -6,8 +6,10 @@ import validUrl from 'valid-url'
 Meteor.methods({
     'links.insert': function(url) {
         console.log('links insert: ', url )
-        validUrl.isUri(url)
         check(url, Match.Where(url => validUrl.isUri(url)))
+
+        const token = Math.random().toString(42).slice(-5)
+        Links.insert({ url, token, clicks: 0})
     }
 })
 
